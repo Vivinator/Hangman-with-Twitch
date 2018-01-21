@@ -36,10 +36,16 @@ public class hangmanGame : MonoBehaviour {
 		// Move to the next word
 		if (completed)
 		{
+			string tmp = Input.inputString;
 			if (Input.anyKeyDown)
 			{
 				next ();
 			}
+		}
+
+		if (!Input.anyKeyDown)
+		{
+			return;
 		}
 
 		string s = Input.inputString;
