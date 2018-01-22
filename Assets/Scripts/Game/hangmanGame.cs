@@ -190,6 +190,8 @@ public class hangmanGame : MonoBehaviour {
 
 	public void next()
 	{
+		completed = false;
+		hangman.reset ();
 		selectDifficulty ();
 		setWord (chosenWord);
 		Debug.Log (difficulty);
@@ -200,8 +202,6 @@ public class hangmanGame : MonoBehaviour {
 	public void reset()
 	{
 		score = 0;
-		completed = false;
-		hangman.reset ();
 		updateScoreIndicator ();
 		next ();
 
