@@ -14,10 +14,12 @@ public class hangmanGame : MonoBehaviour {
 		
 	public Text wordIndicator;
 	public Text scoreIndicator;
+    public TwitchChat chatScript;
 
 	private hangmanController hangman;
 	private string word;
 	private char[] revealed;
+    private char s;
 	private int score;
 	private bool completed;
 
@@ -36,7 +38,7 @@ public class hangmanGame : MonoBehaviour {
 		// Move to the next word
 		if (completed)
 		{
-			string tmp = Input.inputString;
+			//string tmp = Input.inputString;
 			if (Input.anyKeyDown)
 			{
 				next ();
@@ -47,13 +49,15 @@ public class hangmanGame : MonoBehaviour {
 		{
 			return;
 		}
-
-		string s = Input.inputString;
-		if (s.Length == 1 && textUtils.isAlpha (s[0]))
+        
+        //s = Input.inputString;
+        s = chatScript.letter;
+        s = char.ToUpper(s);
+		if (textUtils.isAlpha (s))
 		{
 			Debug.Log ("Have " + s);
 			// Check for player failure
-			if (!check(s.ToUpper()[0]))
+			if (!check(char.ToUpper(s)))
 			{
 				hangman.punish ();
 
@@ -206,5 +210,12 @@ public class hangmanGame : MonoBehaviour {
 		next ();
 
 	}
+
+    IEnumerator Timer()
+    {
+        print(Time.time);
+        yield return new WaitForSeconds(5);
+        print(Time.time);
+    }
 
 }

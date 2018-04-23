@@ -15,6 +15,7 @@ public class TwitchChat : MonoBehaviour {
 
 	public string username, password, channelName; // Get the password from https://twitchapps.com/tmi
 	public Text chatBox;
+    public char letter;
 
 	// Use this for initialization
 	void Start () {
@@ -66,6 +67,12 @@ public class TwitchChat : MonoBehaviour {
 				print (String.Format("{0}: {1}", chatName, message));
 				// Print message in chat box
 				chatBox.text = chatBox.text + "\n" + String.Format ("{0}: {1}", chatName, message);
+
+                if (message.StartsWith("!"))
+                {
+                    letter = message[1];
+                    Debug.Log("Letter " + letter + " has been picked");
+                }
 			}
 		}
 	}
