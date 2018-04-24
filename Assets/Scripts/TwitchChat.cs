@@ -9,13 +9,14 @@ using UnityEngine.UI;
 
 public class TwitchChat : MonoBehaviour {
 
-	private TcpClient twitchClient;
+    public hangmanGame hangmanScript;
+    public string username, password, channelName; // Get the password from https://twitchapps.com/tmi
+    public Text chatBox;
+    public char letter;
+
+    private TcpClient twitchClient;
 	private StreamReader reader;
 	private StreamWriter writer;
-
-	public string username, password, channelName; // Get the password from https://twitchapps.com/tmi
-	public Text chatBox;
-    public char letter;
 
 	// Use this for initialization
 	void Start () {
@@ -72,6 +73,7 @@ public class TwitchChat : MonoBehaviour {
                 {
                     letter = message[1];
                     Debug.Log("Letter " + letter + " has been picked");
+                    hangmanScript.CheckLetter();
                 }
 			}
 		}

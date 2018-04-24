@@ -22,6 +22,7 @@ public class hangmanGame : MonoBehaviour {
     private char s;
 	private int score;
 	private bool completed;
+    private float timeLeft = 10.0f;
 
 	// Use this for initialisation
 	void Start()
@@ -29,7 +30,7 @@ public class hangmanGame : MonoBehaviour {
 		InitialiseString ();
 		hangman = GameObject.FindGameObjectWithTag ("Player").GetComponent <hangmanController>();
 
-		reset ();
+		Reset ();
 	}
 
 	// Update is called once per frame
@@ -41,36 +42,46 @@ public class hangmanGame : MonoBehaviour {
 			//string tmp = Input.inputString;
 			if (Input.anyKeyDown)
 			{
-				next ();
+				Next ();
 			}
+
+            timeLeft -= Time.deltaTime;
+            if (timeLeft == 0)
+            {
+                Next();
+            }
 		}
 
-		if (!Input.anyKeyDown)
+		/*if (!Input.anyKeyDown)
 		{
 			return;
-		}
-        
+		}*/
+             
+	}
+
+    public void CheckLetter()
+    {
         //s = Input.inputString;
         s = chatScript.letter;
         s = char.ToUpper(s);
-		if (textUtils.isAlpha (s))
-		{
-			Debug.Log ("Have " + s);
-			// Check for player failure
-			if (!check(char.ToUpper(s)))
-			{
-				hangman.punish ();
+        if (textUtils.isAlpha(s))
+        {
+            Debug.Log("Have " + s);
+            // Check for player failure
+            if (!Check(char.ToUpper(s)))
+            {
+                hangman.punish();
 
-				if (hangman.isDead)
-				{
-					wordIndicator.text = word;
-					completed = true;
-				}
-			}
-		}
-	}
+                if (hangman.isDead)
+                {
+                    wordIndicator.text = word;
+                    completed = true;
+                }
+            }
+        }
+    }
 
-	private bool check (char c)
+	private bool Check (char c)
 	{
 		bool ret = false;
 		int complete = 0;
@@ -105,8 +116,8 @@ public class hangmanGame : MonoBehaviour {
 				this.score += revealed.Length;
 			}
 
-			updateWordIndicator ();
-			updateScoreIndicator ();
+			UpdateWordIndicator ();
+			UpdateScoreIndicator ();
 		}
 
 		return ret;
@@ -136,7 +147,7 @@ public class hangmanGame : MonoBehaviour {
 		words [19] = "acknowledgement"; //15 SUPER HARD
 	}
 
-	public void selectDifficulty()
+	public void SelectDifficulty()
 	{
 		difficulty = Random.Range (1, 4);
 		switch (difficulty)
@@ -160,7 +171,7 @@ public class hangmanGame : MonoBehaviour {
 		}
 	}
 
-	public void updateWordIndicator()
+	public void UpdateWordIndicator()
 	{
 		string displayed = "";
 
@@ -179,43 +190,37 @@ public class hangmanGame : MonoBehaviour {
 		wordIndicator.text = displayed;
 	}
 
-	public void updateScoreIndicator()
+	public void UpdateScoreIndicator()
 	{
 		scoreIndicator.text = "Score: " + score;
 	}
 
-	public void setWord(string word)
+	public void SetWord(string word)
 	{
 		this.word = word.ToUpper ();
 		revealed = new char[word.Length];
 
-		updateWordIndicator ();
+		UpdateWordIndicator ();
 	}
 
-	public void next()
+	public void Next()
 	{
 		completed = false;
 		hangman.reset ();
-		selectDifficulty ();
-		setWord (chosenWord);
+		SelectDifficulty ();
+        timeLeft = 10.0f;
+        SetWord (chosenWord);
 		Debug.Log (difficulty);
 		Debug.Log(chosenWord);
 		Debug.Log(word);
 	}
 
-	public void reset()
+	public void Reset()
 	{
 		score = 0;
-		updateScoreIndicator ();
-		next ();
+		UpdateScoreIndicator ();
+		Next ();
 
 	}
-
-    IEnumerator Timer()
-    {
-        print(Time.time);
-        yield return new WaitForSeconds(5);
-        print(Time.time);
-    }
 
 }
