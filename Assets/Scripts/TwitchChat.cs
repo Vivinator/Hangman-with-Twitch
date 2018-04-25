@@ -54,6 +54,7 @@ public class TwitchChat : MonoBehaviour {
 		{
 			// Read the current message
 			var message = reader.ReadLine ();
+            Debug.Log(message);
 
 			if (message.Contains("PRIVMSG"))
 			{
@@ -66,6 +67,7 @@ public class TwitchChat : MonoBehaviour {
 				splitPoint = message.IndexOf (":", 1);
 				message = message.Substring(splitPoint + 1);
 				print (String.Format("{0}: {1}", chatName, message));
+
 				// Print message in chat box
 				chatBox.text = chatBox.text + "\n" + String.Format ("{0}: {1}", chatName, message);
 
