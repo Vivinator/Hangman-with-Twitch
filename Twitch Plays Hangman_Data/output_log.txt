@@ -1,0 +1,50 @@
+Initialize engine version: 5.6.3f1 (d3101c3b8468)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 1060 3GB (ID=0x1c02)
+    Vendor:   NVIDIA
+    VRAM:     2988 MB
+    Driver:   23.21.13.9135
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\Vivienne\Documents\GitHub\Hangman-with-Twitch\Twitch Plays Hangman_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Vivienne\Documents\GitHub\Hangman-with-Twitch\Twitch Plays Hangman_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Vivienne\Documents\GitHub\Hangman-with-Twitch\Twitch Plays Hangman_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Vivienne\Documents\GitHub\Hangman-with-Twitch\Twitch Plays Hangman_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Vivienne\Documents\GitHub\Hangman-with-Twitch\Twitch Plays Hangman_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Vivienne\Documents\GitHub\Hangman-with-Twitch\Twitch Plays Hangman_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\Vivienne\Documents\GitHub\Hangman-with-Twitch\Twitch Plays Hangman_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\Vivienne\Documents\GitHub\Hangman-with-Twitch\Twitch Plays Hangman_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\Vivienne\Documents\GitHub\Hangman-with-Twitch\Twitch Plays Hangman_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
+Loading C:\Users\Vivienne\Documents\GitHub\Hangman-with-Twitch\Twitch Plays Hangman_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+- Completed reload, in  0.224 seconds
+Platform assembly: C:\Users\Vivienne\Documents\GitHub\Hangman-with-Twitch\Twitch Plays Hangman_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\Vivienne\Documents\GitHub\Hangman-with-Twitch\Twitch Plays Hangman_Data\Managed\System.dll (this message is harmless)
+desktop: 1920x1080 60Hz; virtual: 3840x1082 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 1.024749 ms
+3
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+ebullient
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+EBULLIENT
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+uwegamestest: hello
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Setting up 6 worker threads for Enlighten.
+  Thread -> id: 352c -> priority: 1 
+  Thread -> id: 3eb4 -> priority: 1 
+  Thread -> id: 14f8 -> priority: 1 
+  Thread -> id: 42b4 -> priority: 1 
+  Thread -> id: 1990 -> priority: 1 
+  Thread -> id: 41e0 -> priority: 1 
