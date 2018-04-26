@@ -46,7 +46,8 @@ public class hangmanGame : MonoBehaviour {
 			}
 
             timeLeft -= Time.deltaTime;
-            if (timeLeft == 0)
+            Debug.Log("Time Left: " + timeLeft);
+            if (timeLeft <= 0)
             {
                 Next();
             }

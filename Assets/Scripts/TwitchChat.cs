@@ -54,7 +54,7 @@ public class TwitchChat : MonoBehaviour {
 		{
 			// Read the current message
 			var message = reader.ReadLine ();
-            Debug.Log(message);
+            //Debug.Log(message);
 
 			if (message.Contains("PRIVMSG"))
 			{
